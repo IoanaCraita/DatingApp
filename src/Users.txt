@@ -1,0 +1,5 @@
+David,30,M,516,acting,cooking,singing,
+Gabi,27,F,423,knitting,baking,drawing,
+Dan,35,M,488,photography,zumba,tennis,
+Ana,25,F,294,cooking,drawing,yoga,
+Alex,27,M,611,football,drawing,singing

@@ -45,7 +45,7 @@ public class Service {
     public User createProfile() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         User user = null;
-        System.out.println("Single and ready to mingle?");
+        System.out.println("Single and ready to mingle? Lets get started");
         try {
             System.out.println("Name: ");
             String name = reader.readLine();
@@ -56,7 +56,7 @@ public class Service {
             System.out.println("Location: ");
             int location = Integer.parseInt(reader.readLine());
 
-            System.out.println(" 3 Hobbies");
+            System.out.println(" Please select 3 hobbies: acting,cooking,singing,knitting,baking,drawing,photography,zumba,tennis,yoga ");
             List<String> hobbies = new ArrayList<>();
             String[] hobby = reader.readLine().split(" ");
             Collections.addAll(hobbies, hobby[0], hobby[1], hobby[2]);
@@ -72,8 +72,33 @@ public class Service {
             }
         }
         return user;
+    }
+
+    //gaseste pers de sex opus, verifica ca diferenta de varsta sa fie de maxim 5 ani ,
+
+    public void findMatch() {
+        List<User> users = readUsers();
+        User userToMatch = createProfile();
+        for (User user: users){
+            if (!user.getSex().equals(userToMatch.getSex()) && calcAgeDiff(user, userToMatch) <= 5) {
+
+            }
+
+        }
+    }
+
+    private void calcScore(){
 
     }
 
+    private int calcAgeDiff(User user,  User userToMatch){
+        int diff = 0;
+        if (user.getAge() >= userToMatch.getAge()) {
+             diff = user.getAge() - userToMatch.getAge();
+        } else {
+            diff = userToMatch.getAge() - user.getAge();
+        }
+        return diff;
+    }
 
 }
